@@ -1,0 +1,52 @@
+config-version: 1
+Debug:
+  Enabled: false
+Compatibility:
+  Mythicmobs: true
+
+Setting:
+  Disable-Mount: true
+  Death-Penalty:
+    Enabled: false
+    Health-Percentage: 1
+    Food-Percentage: 1
+    Saturation-Percentage: 1
+    Min-Health: 20
+    Min-Food-Level: 20
+  Replace-Spawn:
+    Enabled: false
+    Main-Spawn:
+  Disable-BoneMeal: # Disable on the use of bone meal for crops
+    Enabled: false
+  Disable-Spawner: true
+  Reduce-ArrowDamage:
+    Enabled: false
+    Percent: 0.5
+  Exp-Setting:
+    Enabled: false
+  Max-LevelUp:
+    Enabled: false
+    Amount: 100
+    Percent: 0.5
+
+Custom-Skill:
+  Return-Spawn:
+    Enabled: false
+    Radius: 5
+    Skill-Point: 2
+
+Player-Point-Setting:
+  Enabled: false
+  Get-Point-Value: 2000
+  Max-Cap: 300
+  Exchange-Percent: 0.1
+  Fix-DeathEvent:
+    Enabled: false
+
+RpgSetting: # Mythicmobs
+  ActionBar-Interval: 20
+  Skill-Point-Item:
+    Enabled: false
+    InternalName: "skillItem"
+    Chance: 0.005
+  default-skill-points: 10

@@ -1,0 +1,42 @@
+EntityScale:
+  Boss-Entity:
+    Enabled: false
+    Health-Scale: 0.2
+    Damage-Scale: 0.1
+    Armor-Count: 2
+    ArmorToughness-Count: 3
+    Boss-List:
+      - WITHER
+      - ENDER_DRAGON
+  Etc-Entity:
+    Enabled: false
+    Health-Scale: 0.1
+    Damage-Scale: 0.05
+    Armor-Count: 2
+    ArmorToughness-Count: 3
+    Evolution-Chance: 0.01
+    BlackList:
+      - §FTEST_ZOMBIE
+
+Boss:
+  WITHER:
+    BaseHealth: 300
+    BaseDamage: 12
+    BaseArmor: 4
+    BaseArmorToughness: 2
+    Death: 0
+    Last-Health: 300
+    Last-Damage: 12
+    Last-Armor: 4
+    Last-ArmorToughness: 2
+  ENDER_DRAGON:
+    BaseHealth: 200
+    BaseDamage: 15
+    BaseArmor: 4
+    BaseArmorToughness: 4
+    Death: 0
+    Last-Health: 200
+    Last-Armor: 4
+    Last-ArmorToughness: 2
+
+Etc:

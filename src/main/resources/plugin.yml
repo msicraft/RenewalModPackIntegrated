@@ -1,0 +1,15 @@
+name: RenewalModPackIntegrated
+version: 1.0 #'${project.version}'
+main: com.msicraft.renewalmodpackintegrated.RenewalModPackIntegrated
+api-version: 1.16
+softdepend: [MythicMobs]
+authors: [ msicraft ]
+description: Rewritten modpack integrated plugin
+commands:
+  modpackintegrated:
+    description: Plugin Commands
+    aliases: [mpi]
+permissions:
+  modpackintegrated.command:
+    description: Allow Plugin Commands
+    default: op
