@@ -122,6 +122,7 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        playerUpgradeUtil.playerDataSave();
         getServer().getConsoleSender().sendMessage(getPrefix() + ChatColor.GREEN + " Saving PlayerData");
         Bukkit.getServer().getConsoleSender().sendMessage(getPrefix() + ChatColor.RED + " Plugin disabled");
     }

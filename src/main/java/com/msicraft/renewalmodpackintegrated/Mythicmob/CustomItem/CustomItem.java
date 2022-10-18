@@ -4,6 +4,7 @@ import com.msicraft.renewalmodpackintegrated.RenewalModPackIntegrated;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
@@ -16,6 +17,7 @@ public class CustomItem {
         ItemMeta itemMeta = itemStack.getItemMeta();
         PersistentDataContainer data = itemMeta.getPersistentDataContainer();
         itemMeta.setDisplayName(ChatColor.WHITE + "Player Point");
+        itemMeta.addEnchant(Enchantment.DURABILITY, 1, false);
         data.set(new NamespacedKey(RenewalModPackIntegrated.getPlugin(), "MPI_POINT-ITEM"), PersistentDataType.STRING, "MPI_POINT-ITEM");
         data.set(new NamespacedKey(RenewalModPackIntegrated.getPlugin(), "MPI_POINT-ITEM-VALUE"), PersistentDataType.INTEGER, value);
         itemStack.setItemMeta(itemMeta);
