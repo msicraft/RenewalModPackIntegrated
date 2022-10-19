@@ -1,6 +1,8 @@
 package com.msicraft.renewalmodpackintegrated.Event;
 
 import com.msicraft.renewalmodpackintegrated.RenewalModPackIntegrated;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -29,6 +31,9 @@ public class PlayerExp implements Listener {
                             }
                             int value = Math.min(calExp, maxCap);
                             experienceOrb.setExperience(value);
+                            if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Debug.Enabled")) {
+                                Bukkit.getConsoleSender().sendMessage(RenewalModPackIntegrated.getPrefix() + ChatColor.GREEN + "Fix DeathEvent True | Drop Exp: " + ChatColor.WHITE + value);
+                            }
                         }
                     }
                 }
@@ -42,6 +47,9 @@ public class PlayerExp implements Listener {
                     calExp = maxCap;
                 }
                 e.setDroppedExp(calExp);
+                if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Debug.Enabled")) {
+                    Bukkit.getConsoleSender().sendMessage(RenewalModPackIntegrated.getPrefix() + ChatColor.GREEN + "Fix DeathEvent False | Drop Exp: " + ChatColor.WHITE + calExp);
+                }
             }
         }
     }
