@@ -24,10 +24,10 @@ Setting:
     Percent: 0.5
   Exp-Setting:
     Enabled: false
-  Max-LevelUp:
-    Enabled: false
-    Amount: 100
+    Max-Cap: 100
     Percent: 0.5
+    Fix-DeathExp:
+      Enabled: false
 
 Custom-Skill:
   Return-Spawn:

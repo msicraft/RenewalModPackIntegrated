@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
@@ -17,7 +16,6 @@ import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.UUID;
 
 public class EtcEntityScalingEvent implements Listener {
 

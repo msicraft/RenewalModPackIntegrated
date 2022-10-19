@@ -47,7 +47,7 @@ public class RpgKillEntityEvent implements Listener {
                     if (world != null) {
                         world.dropItemNaturally(loc, itemStack);
                         Bukkit.getScheduler().runTaskLater(RenewalModPackIntegrated.getPlugin(), () -> {
-                            for (Entity entity : world.getNearbyEntities(loc, 5, 2, 5)) {
+                            for (Entity entity : world.getNearbyEntities(loc, 2.5, 1, 2.5)) {
                                 if (entity instanceof Item item) {
                                     ItemMeta itemMeta = item.getItemStack().getItemMeta();
                                     if (itemMeta != null) {

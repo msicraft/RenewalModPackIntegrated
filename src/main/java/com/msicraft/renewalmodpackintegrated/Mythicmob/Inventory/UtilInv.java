@@ -137,7 +137,7 @@ public class UtilInv implements InventoryHolder{
                     double percent = RenewalModPackIntegrated.skillData.getConfig().getDouble("Skills." + skillId + ".LevelPerPower");
                     int cal = (int) (percent * 100);
                     String s = cal + "%";
-                    loreList.add(ChatColor.GREEN + "Damage increase per level: " + ChatColor.WHITE + s);
+                    loreList.add(ChatColor.GREEN + "Power increase per level: " + ChatColor.WHITE + s);
                     itemMeta.setLore(loreList);
                     data.set(new NamespacedKey(RenewalModPackIntegrated.getPlugin(), "MPI_UTIL_UPGRADE-SKILL"), PersistentDataType.STRING, skillId);
                     itemStack.setItemMeta(itemMeta);

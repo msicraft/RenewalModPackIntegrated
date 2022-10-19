@@ -7,8 +7,8 @@ import com.msicraft.renewalmodpackintegrated.FlatFileData.*;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.LearnSkillInvEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.SkillSettingInvEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.UtilInvEvent;
-import com.msicraft.renewalmodpackintegrated.Mythicmob.RpgKillEntityEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.PlayerPointEvent;
+import com.msicraft.renewalmodpackintegrated.Mythicmob.RpgKillEntityEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.RpgPlayerJoinEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.SkillItemEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Tasks.PlayerPointTask;
@@ -143,6 +143,7 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
         pluginManager.registerEvents(new EntityDamage(), this);
         pluginManager.registerEvents(new PlayerBlockEvent(), this);
         pluginManager.registerEvents(new EtcEntityScalingEvent(), this);
+        pluginManager.registerEvents(new PlayerExp(), this);
     }
 
     private void registerMythicMobsEvent() {
