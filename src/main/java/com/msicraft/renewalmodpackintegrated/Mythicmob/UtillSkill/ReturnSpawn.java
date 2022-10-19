@@ -1,6 +1,7 @@
 package com.msicraft.renewalmodpackintegrated.Mythicmob.UtillSkill;
 
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Utils.MythicMobsUtil;
+import com.msicraft.renewalmodpackintegrated.Mythicmob.Utils.PlayerUpgradeUtil;
 import com.msicraft.renewalmodpackintegrated.RenewalModPackIntegrated;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ReturnSpawn {
 
-    private MythicMobsUtil mythicMobsUtil = new MythicMobsUtil();
+    private PlayerUpgradeUtil playerUpgradeUtil = new PlayerUpgradeUtil();
 
     public void castReturnSkill(Player player, double radius) {
         boolean check = RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Custom-Skill.Return-Spawn.Enabled");
@@ -52,7 +53,7 @@ public class ReturnSpawn {
                 player.teleport(loc);
             }
             player.sendMessage(ChatColor.GREEN + "Return Spawn");
-            player.sendMessage(ChatColor.GREEN + "Left Skill Point: " + ChatColor.WHITE + mythicMobsUtil.getPlayerSkillPoint(player));
+            player.sendMessage(ChatColor.GREEN + "Left Point: " + ChatColor.WHITE + playerUpgradeUtil.getPoint(player.getUniqueId()));
             if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Debug.Enabled")) {
                 if (!nearbyPlayerList.isEmpty()) {
                     Bukkit.getConsoleSender().sendMessage(RenewalModPackIntegrated.getPrefix() + ChatColor.GREEN + "Cast-Return Spawn: " + ChatColor.WHITE + "\nNearby Players: " + nearbyPlayerList.size() + "\nPlayers: " + nearbyPlayerList);

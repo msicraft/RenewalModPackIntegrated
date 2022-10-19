@@ -88,7 +88,7 @@ public class UtilInv implements InventoryHolder{
         skillUpgradeData.set(new NamespacedKey(RenewalModPackIntegrated.getPlugin(), "MPI_UTIL"), PersistentDataType.STRING, "MPI_UTIL_SKILL-UPGRADE");
         skillUpgrade.setItemMeta(skillUpgradeMeta);
         utilInventory.setItem(14, skillUpgrade);
-        int requiredPoint = RenewalModPackIntegrated.getPlugin().getConfig().getInt("Custom-Skill.Return-Spawn.Skill-Point");
+        int requiredPoint = RenewalModPackIntegrated.getPlugin().getConfig().getInt("Custom-Skill.Return-Spawn.Player-Point");
         ItemStack returnSkill = new ItemStack(Material.COMPASS, 1);
         ItemMeta returnSkillMeta = returnSkill.getItemMeta();
         returnSkillMeta.setDisplayName(ChatColor.GREEN + "Return Spawn");
@@ -99,7 +99,7 @@ public class UtilInv implements InventoryHolder{
         returnSkillData.set(new NamespacedKey(RenewalModPackIntegrated.getPlugin(), "MPI_UTIL"), PersistentDataType.STRING, "MPI_UTIL_SKILL-ReturnSpawn");
         loreList.add(ChatColor.YELLOW + "Left Click: " + ChatColor.GREEN + " Use Skill");
         loreList.add("");
-        loreList.add(ChatColor.YELLOW + "Required Skill Point: " + ChatColor.WHITE + " " + requiredPoint);
+        loreList.add(ChatColor.YELLOW + "Required Player Point: " + ChatColor.WHITE + " " + requiredPoint);
         loreList.add("");
         loreList.add(ChatColor.WHITE + "Return to the spawn point with nearby players");
         returnSkillMeta.setLore(loreList);

@@ -60,15 +60,15 @@ public class UtilInvEvent implements Listener {
                                     boolean check = RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Custom-Skill.Return-Spawn.Enabled");
                                     if (check) {
                                         ReturnSpawn returnSpawn = new ReturnSpawn();
-                                        int requiredPoint = RenewalModPackIntegrated.getPlugin().getConfig().getInt("Custom-Skill.Return-Spawn.Skill-Point");
+                                        int requiredPoint = RenewalModPackIntegrated.getPlugin().getConfig().getInt("Custom-Skill.Return-Spawn.Player-Point");
                                         int radius = RenewalModPackIntegrated.getPlugin().getConfig().getInt("Custom-Skill.Return-Spawn.Radius");
-                                        int point = mythicMobsUtil.getPlayerSkillPoint(player);
+                                        int point = playerUpgradeUtil.getPoint(player.getUniqueId());
                                         if (point >= requiredPoint) {
                                             int calPoint = point - requiredPoint;
-                                            mythicMobsUtil.setPlayerSkillPoint(player, calPoint);
+                                            playerUpgradeUtil.setPoint(player.getUniqueId(), calPoint);
                                             returnSpawn.castReturnSkill(player, radius);
                                         } else {
-                                            player.sendMessage(ChatColor.RED + "You don't have enough skill points");
+                                            player.sendMessage(ChatColor.RED + "You don't have enough points");
                                         }
                                     } else {
                                         player.sendMessage(ChatColor.RED + "Disabled skill");

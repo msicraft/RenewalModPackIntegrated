@@ -33,7 +33,7 @@ Custom-Skill:
   Return-Spawn:
     Enabled: false
     Radius: 5
-    Skill-Point: 2
+    Player-Point: 2
 
 Player-Point-Setting:
   Enabled: false
