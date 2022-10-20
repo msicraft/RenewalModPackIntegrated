@@ -132,12 +132,6 @@ public class MythicMobsUtil {
         return point;
     }
 
-    public void registerScrollId() {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            RenewalModPackIntegrated.getPlugin().scroll_SKillId.put(player.getUniqueId(), 0);
-        }
-    }
-
     public void getSkillItem(Player player) {
         ItemStack itemStack = new ItemStack(Material.PAPER, 1);
         ItemMeta itemMeta = itemStack.getItemMeta();
