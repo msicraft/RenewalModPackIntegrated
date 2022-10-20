@@ -1,5 +1,6 @@
 package com.msicraft.renewalmodpackintegrated.Command;
 
+import com.msicraft.renewalmodpackintegrated.Inventory.EvolutionListInv;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.LearnSkillInv;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.SkillSettingInv;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.UtilInv;
@@ -231,6 +232,13 @@ public class MainCommand implements CommandExecutor {
                             } else {
                                 sender.sendMessage("/mpi main-spawn set");
                             }
+                        }
+                    }
+                    case "evolution" -> {
+                        if (sender instanceof Player player) {
+                            EvolutionListInv evolutionListInv = new EvolutionListInv(player);
+                            player.openInventory(evolutionListInv.getInventory());
+                            evolutionListInv.setInv();
                         }
                     }
                 }

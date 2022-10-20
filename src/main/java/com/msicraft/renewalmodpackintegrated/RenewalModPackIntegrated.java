@@ -4,6 +4,7 @@ import com.msicraft.renewalmodpackintegrated.Command.MainCommand;
 import com.msicraft.renewalmodpackintegrated.Command.TabComplete;
 import com.msicraft.renewalmodpackintegrated.Event.*;
 import com.msicraft.renewalmodpackintegrated.FlatFileData.*;
+import com.msicraft.renewalmodpackintegrated.Inventory.Event.EvolutionListInvEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.LearnSkillInvEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.SkillSettingInvEvent;
 import com.msicraft.renewalmodpackintegrated.Mythicmob.Inventory.InvEvent.UtilInvEvent;
@@ -87,6 +88,16 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
         return list;
     }
 
+    public ArrayList<String> getEtcEvolutionList() {
+        ArrayList<String> list = new ArrayList<>();
+        ConfigurationSection configurationSection = entityScaleData.getConfig().getConfigurationSection("Etc");
+        if (configurationSection != null) {
+            Set<String> entity = configurationSection.getKeys(false);
+            list.addAll(entity);
+        }
+        return list;
+    }
+
     @Override
     public void onEnable() {
         createFiles();
@@ -144,6 +155,7 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
         pluginManager.registerEvents(new PlayerBlockEvent(), this);
         pluginManager.registerEvents(new EtcEntityScalingEvent(), this);
         pluginManager.registerEvents(new PlayerExp(), this);
+        pluginManager.registerEvents(new EvolutionListInvEvent(), this);
     }
 
     private void registerMythicMobsEvent() {
@@ -211,6 +223,7 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
     public void FilesReload() {
         playerUpgradeUtil.playerDataSave();
         getDataUUIDList();
+        getEtcEvolutionList();
         getPlugin().reloadConfig();
         registerSkill.reloadConfig();
         skillData.reloadConfig();
@@ -221,7 +234,7 @@ public final class RenewalModPackIntegrated extends JavaPlugin {
             if (getServer().getPluginManager().getPlugin("MythicMobs") != null) {
                 MythicMobsUtil mythicMobsUtil = new MythicMobsUtil();
                 mythicMobsUtil.SkillIdentification();
-                mythicMobsUtil.registerScrollId();
+                //mythicMobsUtil.registerScrollId();
             }
             setTask();
         }

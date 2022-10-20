@@ -1,6 +1,8 @@
 package com.msicraft.renewalmodpackintegrated.Mythicmob;
 
+import com.msicraft.renewalmodpackintegrated.Mythicmob.Utils.PlayerUpgradeUtil;
 import com.msicraft.renewalmodpackintegrated.RenewalModPackIntegrated;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,6 +12,8 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class RpgPlayerJoinEvent implements Listener {
+
+    private PlayerUpgradeUtil playerUpgradeUtil = new PlayerUpgradeUtil();
 
     @EventHandler
     public void onPlayerFirstJoin(PlayerJoinEvent e) {
@@ -25,6 +29,16 @@ public class RpgPlayerJoinEvent implements Listener {
             RenewalModPackIntegrated.playerData.getConfig().set("PlayerData." + uuid + ".Learn-Skills", "");
             RenewalModPackIntegrated.playerData.getConfig().set("PlayerData." + uuid + ".Skill-Slot", "");
             RenewalModPackIntegrated.playerData.saveConfig();
+            Bukkit.getScheduler().runTaskLater(RenewalModPackIntegrated.getPlugin(), ()-> {
+                if (!RenewalModPackIntegrated.getPlugin().getPlayerPoint().containsKey(uuid)) {
+                    int point = RenewalModPackIntegrated.playerData.getConfig().getInt("PlayerData." + uuid + ".Points");
+                    playerUpgradeUtil.setPoint(uuid, point);
+                }
+                if (!RenewalModPackIntegrated.getPlugin().getPlayerPointExp().containsKey(uuid)) {
+                    int pointExp = RenewalModPackIntegrated.playerData.getConfig().getInt("PlayerData." + uuid + ".Points-Exp");
+                    playerUpgradeUtil.setPointExp(uuid, pointExp);
+                }
+            }, 10L);
         }
     }
 

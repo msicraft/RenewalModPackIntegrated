@@ -24,9 +24,11 @@ public class TabComplete implements TabCompleter {
                     arguments.add("point");
                     arguments.add("point-exp");
                     arguments.add("get-xp");
+                    arguments.add("evolution");
                 } else {
                     arguments.add("skill");
                     arguments.add("util");
+                    arguments.add("evolution");
                 }
                 return arguments;
             }
