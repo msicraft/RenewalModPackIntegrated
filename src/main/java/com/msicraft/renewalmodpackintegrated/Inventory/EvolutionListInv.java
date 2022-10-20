@@ -12,9 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class EvolutionListInv implements InventoryHolder {
 
@@ -44,6 +42,7 @@ public class EvolutionListInv implements InventoryHolder {
         int gui_max = 45;
         int lastCount = page_num*45;
         ArrayList<String> entityNameList = new ArrayList<>(RenewalModPackIntegrated.getPlugin().getEtcEvolutionList());
+        Collections.sort(entityNameList);
         for (int a = lastCount; a<maxSize; a++) {
             List<String> loreList = new ArrayList<>();
             String entityName = entityNameList.get(a);
