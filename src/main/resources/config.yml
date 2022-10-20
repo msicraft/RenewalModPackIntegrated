@@ -42,6 +42,8 @@ Player-Point-Setting:
   Exchange-Percent: 0.1
   Fix-DeathEvent:
     Enabled: false
+  Replace-To-DamageEvent:
+    Enabled: false
 
 RpgSetting: # Mythicmobs
   ActionBar-Interval: 20
