@@ -57,10 +57,10 @@ public class EvolutionListInv implements InventoryHolder {
             double lastArmorToughness = Math.round(RenewalModPackIntegrated.entityScaleData.getConfig().getDouble("Etc." + entityName + ".Last-ArmorToughness") * 1000) / 1000.0;
             loreList.add(ChatColor.GREEN + "Evolution Count: " + ChatColor.WHITE + evolutionCount);
             loreList.add("");
-            loreList.add(ChatColor.GREEN + "Last Health" + ChatColor.WHITE + lastHealth);
-            loreList.add(ChatColor.GREEN + "Last Damage" + ChatColor.WHITE + lastDamage);
-            loreList.add(ChatColor.GREEN + "Last Armor" + ChatColor.WHITE + lastArmor);
-            loreList.add(ChatColor.GREEN + "Last ArmorToughness" + ChatColor.WHITE + lastArmorToughness);
+            loreList.add(ChatColor.GREEN + "Last Health: " + ChatColor.WHITE + lastHealth);
+            loreList.add(ChatColor.GREEN + "Last Damage: " + ChatColor.WHITE + lastDamage);
+            loreList.add(ChatColor.GREEN + "Last Armor: " + ChatColor.WHITE + lastArmor);
+            loreList.add(ChatColor.GREEN + "Last ArmorToughness: " + ChatColor.WHITE + lastArmorToughness);
             itemMeta.setLore(loreList);
             itemStack.setItemMeta(itemMeta);
             evolutionListInv.setItem(gui_count, itemStack);
