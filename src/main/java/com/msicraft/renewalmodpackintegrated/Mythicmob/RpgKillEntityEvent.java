@@ -135,7 +135,7 @@ public class RpgKillEntityEvent implements Listener {
     @EventHandler
     public void onPlayerPointItemPickup(EntityPickupItemEvent e) {
         if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Player-Point-Setting.Enabled")) {
-            if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Player-Point-Setting.Fix-DeathEvent.Enabled")) {
+            if (RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Player-Point-Setting.Fix-DeathEvent.Enabled") || RenewalModPackIntegrated.getPlugin().getConfig().getBoolean("Player-Point-Setting.Replace-To-DamageEvent.Enabled")) {
                 Item item = e.getItem();
                 ItemStack itemStack = item.getItemStack();
                 ItemMeta itemMeta = itemStack.getItemMeta();
