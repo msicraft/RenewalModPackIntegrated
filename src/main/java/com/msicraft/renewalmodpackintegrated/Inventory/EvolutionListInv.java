@@ -61,6 +61,7 @@ public class EvolutionListInv implements InventoryHolder {
             loreList.add(ChatColor.GREEN + "Last Damage" + ChatColor.WHITE + lastDamage);
             loreList.add(ChatColor.GREEN + "Last Armor" + ChatColor.WHITE + lastArmor);
             loreList.add(ChatColor.GREEN + "Last ArmorToughness" + ChatColor.WHITE + lastArmorToughness);
+            itemMeta.setLore(loreList);
             itemStack.setItemMeta(itemMeta);
             evolutionListInv.setItem(gui_count, itemStack);
             gui_count++;
